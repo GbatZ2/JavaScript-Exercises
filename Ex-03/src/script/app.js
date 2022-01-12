@@ -66,8 +66,11 @@ let contador =0;
 
 right.addEventListener("click",  () =>{
     
-    if(contador===reviews.length){
+    if(contador>=reviews.length-1){
         contador=0;
+    
+    }else if(contador<reviews.length){
+        contador++;
     }
     
     title.textContent =(reviews[contador].name);
@@ -75,7 +78,9 @@ right.addEventListener("click",  () =>{
     text.textContent=(reviews[contador].info);
     img.src=(reviews[contador].image);
 
-    contador++;
+    console.log(contador)
+ 
+    
 
     
 });
@@ -85,7 +90,7 @@ left.addEventListener("click", ()=>{
     if(contador>0){
       
         contador--;
-    }else{
+    }else if(contador===0){
         contador=reviews.length;
         contador--;
     }
@@ -94,7 +99,7 @@ left.addEventListener("click", ()=>{
     job.textContent =(reviews[contador].dream);
     text.textContent=(reviews[contador].info);
     img.src=(reviews[contador].image);
-    contador--;
+        console.log(contador)
 
 });
 
